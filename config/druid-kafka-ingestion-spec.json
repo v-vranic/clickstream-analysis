@@ -1,0 +1,168 @@
+{
+  "type": "kafka",
+  "spec": {
+    "dataSchema": {
+      "dataSource": "clickstream",
+      "granularitySpec": {
+        "type": "uniform",
+        "segmentGranularity": "WEEK",
+        "queryGranularity": {
+          "type": "none"
+        },
+        "rollup": false,
+        "intervals": null
+      },
+      "metricsSpec": [],
+      "parser": {
+        "type": "avro_stream",
+        "avroBytesDecoder": {
+          "type": "schema_inline",
+          "schema": {
+            "name": "ClickstreamEvent",
+            "type": "record",
+            "fields": [
+              {
+                "name": "eventTime",
+                "type": "string"
+              },
+              {
+                "name": "userSession",
+                "type": "string"
+              },
+              {
+                "name": "productId",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              },
+              {
+                "name": "categoryId",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              },
+              {
+                "name": "price",
+                "type": [
+                  "null",
+                  "double"
+                ],
+                "default": null
+              },
+              {
+                "name": "eventType",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              },
+              {
+                "name": "categoryCode",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              },
+              {
+                "name": "brand",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              },
+              {
+                "name": "userId",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              },
+              {
+                "name": "pagePath",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              }
+            ]
+          }
+        },
+        "parseSpec": {
+          "format": "avro",
+          "timestampSpec": {
+            "column": "eventTime",
+            "format": "auto",
+            "missingValue": null
+          },
+          "dimensionsSpec": {
+            "dimensionExclusions": [
+              "eventTime"
+            ],
+            "dimensions": [
+              {
+                "type": "string",
+                "name": "brand"
+              },
+              {
+                "type": "string",
+                "name": "categoryCode"
+              },
+              {
+                "type": "string",
+                "name": "categoryId"
+              },
+              {
+                "type": "string",
+                "name": "eventType"
+              },
+              {
+                "type": "double",
+                "name": "price"
+              },
+              {
+                "type": "string",
+                "name": "productId"
+              },
+              {
+                "type": "string",
+                "name": "userId"
+              },
+              {
+                "type": "string",
+                "name": "userSession"
+              },
+              {
+                "type": "string",
+                "name": "pagePath"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "ioConfig": {
+      "type": "kafka",
+      "topic": "clickstream",
+      "replicas": 1,
+      "taskCount": 1,
+      "consumerProperties": {
+        "bootstrap.servers": "192.168.2.198:9092"
+      },
+      "useEarliestOffset": false
+    },
+    "tuningConfig": {
+      "type": "kafka",
+      "resetOffsetAutomatically": false,
+      "logParseExceptions": true
+    }
+  }
+}

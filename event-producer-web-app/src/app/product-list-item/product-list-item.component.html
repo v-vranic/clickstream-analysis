@@ -1,0 +1,33 @@
+<div class="card" *ngIf="isVertical">
+    <div class="card-img-top product-img">
+        <img *ngIf="product.imageUrl" class="img-wrapper" [src]="product.imageUrl" />
+    </div>
+    <div class="card-body">
+        <div class="row product-name-row justify-content-center">
+            <h5 class="card-title">
+                {{ product.name }}
+            </h5>    
+        </div>
+        <div class="row product-price-row justify-content-center">
+            <h4 class="product-price">
+                {{ product.price }} $
+            </h4>    
+        </div>
+    </div>
+</div>
+
+<div class="card" *ngIf="!isVertical">
+    <div class="row no-gutters horizontal-product-wrapper">
+        <div class="product-img-horizontal col-sm-4">
+            <img *ngIf="product.imageUrl" class="img-wrapper" [src]="product.imageUrl" />
+        </div>
+        <div class="card-body col-sm-8">
+            <h5 class="card-title text-center">
+                {{ product.name }}
+            </h5>
+            <h5 class="product-price text-center">
+                {{ product.price }} $
+            </h5>
+        </div>
+    </div>
+</div>

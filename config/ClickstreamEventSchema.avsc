@@ -1,0 +1,16 @@
+{
+	"name": "ClickstreamEvent",
+	"type": "record",
+	"fields": [
+		{ "name": "eventTime", "type": "string"},
+		{ "name": "userSession", "type": "string"},
+		{ "name": "productId", "type": ["null", "string"], "default": null},
+		{ "name": "categoryId", "type": ["null", "string"], "default": null},
+		{ "name": "price", "type": ["null", "double"], "default": null},
+		{ "name": "eventType", "type": ["null", "string"], "default": null},
+		{ "name": "categoryCode", "type": ["null", "string"], "default": null},
+		{ "name": "brand", "type": ["null", "string"], "default": null},
+		{ "name": "userId", "type": ["null", "string"], "default": null},
+		{ "name": "pagePath", "type": ["null", "string"], "default": null}
+	]
+}

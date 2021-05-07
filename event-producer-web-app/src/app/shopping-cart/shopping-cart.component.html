@@ -1,0 +1,42 @@
+<div class="container m-0">
+    <div class="row" *ngIf="getNumOfItemsInCart() > 0">
+        <div class="col-sm-8 mt-2">
+            <div class="row border-bottom border-right border-left" *ngFor="let item of shoppingCart | keyvalue">
+                <app-product-list-item *ngIf="item.value" [product]="item.value" [isVertical]="false" class="col-sm-10">
+                </app-product-list-item>
+                <div class="col-sm-2 align-self-center text-center">
+                    <i class="bi bi-x-square-fill remove-cart-icon" *ngIf="item.value"
+                        (click)="removeFromShoppingCart(item.value)">
+                    </i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 mt-2 text-center">
+            <h4>
+                Shopping Cart
+            </h4>
+            <h5 class="mt-4">
+                Total:
+            </h5>
+            <h3 class="font-weight-bold total-amount">
+                {{ getTotalAmount() }} $
+            </h3>
+            <button [disabled]="isCheckoutInProgress()" type="button" class="btn btn-dark checkout-btn mt-4"
+                (click)="checkout()">
+                <h4>
+                    Checkout
+                </h4>
+            </button>
+            <div class="row mt-4">
+                <div class="spinner-border m-auto" role="status" *ngIf="isCheckoutInProgress()">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="text-center" *ngIf="getNumOfItemsInCart() === 0">
+        <h4 class="h-100 p-5">Shopping Cart is empty</h4>
+    </div>
+</div>

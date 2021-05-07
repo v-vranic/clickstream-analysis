@@ -1,0 +1,31 @@
+.product-img {
+    height: 170px;
+    background-color: #a5a2a9;
+}
+.product-name-row {
+    height: 70px;
+}
+
+.product-price-row {
+    height: 50px;
+}
+
+.product-img-horizontal {
+    height: 100%;
+    background-color: #a5a2a9;
+}
+
+.product-price {
+    font-weight: bold;
+    text-align: right;
+    color: #b70505;
+}
+
+.card:hover {
+    border-color: black;
+    cursor: pointer;
+}
+
+.horizontal-product-wrapper {
+    height: 120px;
+}

@@ -1,0 +1,25 @@
+.icon-wrapper {
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-item-wrapper {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.nav-wrapper {
+    background-color: #494463;
+}
+
+.item-count {
+    font-size: 25px;
+    position: absolute;
+    color: yellow;
+}

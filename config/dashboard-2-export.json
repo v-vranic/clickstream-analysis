@@ -1,0 +1,507 @@
+{
+    "dashboards": [
+        {
+            "__Dashboard__": {
+                "css": "",
+                "dashboard_title": "Dashboard 2",
+                "description": null,
+                "json_metadata": "{\"timed_refresh_immune_slices\": [], \"expanded_slices\": {}, \"refresh_frequency\": 10, \"default_filters\": \"{}\", \"color_scheme\": null, \"remote_id\": 3}",
+                "position_json": "{\"CHART-IuxSF9d_mp\":{\"children\":[],\"id\":\"CHART-IuxSF9d_mp\",\"meta\":{\"chartId\":20,\"height\":50,\"sliceName\":\"Page views - last 7 days\",\"uuid\":\"daea8e72-ce6e-4b1b-b1c4-82d3c0db6cea\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-mGvKB5Yti\"],\"type\":\"CHART\"},\"CHART-Knx1v7kU4T\":{\"children\":[],\"id\":\"CHART-Knx1v7kU4T\",\"meta\":{\"chartId\":17,\"height\":50,\"sliceName\":\"Purchase and add to cart - count per minute\",\"uuid\":\"76f1fb17-99e1-45dd-baa0-db022cd74fc1\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-mGvKB5Yti\"],\"type\":\"CHART\"},\"CHART-_wM4JW2Kx4\":{\"children\":[],\"id\":\"CHART-_wM4JW2Kx4\",\"meta\":{\"chartId\":14,\"height\":50,\"sliceName\":\"Conversion rate - last 7 days\",\"uuid\":\"cbd25069-2207-4131-8009-ea623f202359\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-26FE-C6yft\"],\"type\":\"CHART\"},\"CHART-kLcmlvc5eJ\":{\"children\":[],\"id\":\"CHART-kLcmlvc5eJ\",\"meta\":{\"chartId\":4,\"height\":50,\"sliceName\":\"Active users - 30 min period\",\"uuid\":\"9a99464a-5438-43b8-9ca8-6b54f1f5b967\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-26FE-C6yft\"],\"type\":\"CHART\"},\"CHART-vsX7h5oHO9\":{\"children\":[],\"id\":\"CHART-vsX7h5oHO9\",\"meta\":{\"chartId\":19,\"height\":50,\"sliceName\":\"Average visit duration - last 30 days\",\"uuid\":\"4c5ca2ab-6ce2-4ea0-ba24-3b743d97b4b8\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-26FE-C6yft\"],\"type\":\"CHART\"},\"DASHBOARD_VERSION_KEY\":\"v2\",\"GRID_ID\":{\"children\":[\"ROW-26FE-C6yft\",\"ROW-mGvKB5Yti\"],\"id\":\"GRID_ID\",\"parents\":[\"ROOT_ID\"],\"type\":\"GRID\"},\"HEADER_ID\":{\"id\":\"HEADER_ID\",\"meta\":{\"text\":\"Dashboard 2\"},\"type\":\"HEADER\"},\"ROOT_ID\":{\"children\":[\"GRID_ID\"],\"id\":\"ROOT_ID\",\"type\":\"ROOT\"},\"ROW-26FE-C6yft\":{\"children\":[\"CHART-kLcmlvc5eJ\",\"CHART-_wM4JW2Kx4\",\"CHART-vsX7h5oHO9\"],\"id\":\"ROW-26FE-C6yft\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"ROW\"},\"ROW-mGvKB5Yti\":{\"children\":[\"CHART-Knx1v7kU4T\",\"CHART-IuxSF9d_mp\"],\"id\":\"ROW-mGvKB5Yti\",\"meta\":{\"0\":\"ROOT_ID\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"ROW\"}}",
+                "slices": [
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "druid.clickstream",
+                            "datasource_type": "table",
+                            "id": 4,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"1__table\", \"granularity_sqla\": \"__time\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"COUNT_DISTINCT\", \"column\": {\"column_name\": \"userSession\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 9, \"is_dttm\": false, \"python_date_format\": null, \"type\": \"STRING\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"hasCustomLabel\": false, \"isNew\": false, \"label\": \"COUNT_DISTINCT(userSession)\", \"optionName\": \"metric_7w4lmk189j4_ppzld81e95h\", \"sqlExpression\": null}, \"slice_id\": 4, \"subheader\": \"Active users\", \"subheader_font_size\": 0.15, \"time_range\": \"dateadd(datetime(\\\"now\\\"), -150, minute) : dateadd(datetime(\\\"now\\\"), -120, minute)\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"big_number_total\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 4, \"datasource_name\": \"clickstream\", \"schema\": \"druid\", \"database_name\": \"clickstream\"}",
+                            "slice_name": "Active users - 30 min period",
+                            "viz_type": "big_number_total"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "druid.clickstream",
+                            "datasource_type": "table",
+                            "id": 14,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"1__table\", \"granularity_sqla\": \"__time\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"hasCustomLabel\": false, \"isNew\": false, \"label\": \"CAST((COUNT(*) FILTER (WHERE eventType =...\", \"optionName\": \"metric_4t7uxdbhsuk_uz9d2irm8vh\", \"sqlExpression\": \"CAST((COUNT(*) FILTER (WHERE eventType = 'purchase')) AS FLOAT) / COUNT(DISTINCT userSession)\"}, \"slice_id\": 14, \"subheader\": \"Conversion rate\", \"subheader_font_size\": 0.15, \"time_range\": \"DATEADD(DATETIME(\\\"now\\\"), -7, day) : now\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"big_number_total\", \"y_axis_format\": \",.1%\", \"remote_id\": 14, \"datasource_name\": \"clickstream\", \"schema\": \"druid\", \"database_name\": \"clickstream\"}",
+                            "slice_name": "Conversion rate - last 7 days",
+                            "viz_type": "big_number_total"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "druid.clickstream",
+                            "datasource_type": "table",
+                            "id": 17,
+                            "params": "{\"adhoc_filters\": [], \"annotation_layers\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"comparison_type\": \"values\", \"datasource\": \"1__table\", \"granularity_sqla\": \"__time\", \"groupby\": [], \"label_colors\": {\"addToCartCount\": \"#1FA8C9\", \"purchaseCount\": \"#454E7C\"}, \"left_margin\": \"auto\", \"limit\": 0, \"line_interpolation\": \"linear\", \"metrics\": [\"purchaseCount\", \"addToCartCount\"], \"order_desc\": true, \"rich_tooltip\": true, \"rolling_type\": \"None\", \"row_limit\": 50000, \"send_time_range\": false, \"show_brush\": \"auto\", \"show_legend\": true, \"show_markers\": true, \"slice_id\": 17, \"time_grain_sqla\": \"PT1M\", \"time_range\": \"dateadd(datetime(\\\"now\\\"), -180, minute) : dateadd(datetime(\\\"now\\\"), -120, minute)\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"line\", \"x_axis_format\": \"smart_date\", \"x_axis_label\": \"\", \"x_axis_showminmax\": false, \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"y_axis_showminmax\": false, \"y_log_scale\": false, \"remote_id\": 17, \"datasource_name\": \"clickstream\", \"schema\": \"druid\", \"database_name\": \"clickstream\"}",
+                            "slice_name": "Purchase and add to cart - count per minute",
+                            "viz_type": "line"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "Average visit duration - last month",
+                            "datasource_type": "table",
+                            "id": 19,
+                            "params": "{\"adhoc_filters\": [], \"datasource\": \"5__table\", \"header_font_size\": 0.4, \"metric\": {\"aggregate\": \"SUM\", \"column\": {\"column_name\": \"EXPR$0\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 19, \"is_dttm\": false, \"python_date_format\": null, \"type\": \"INT\", \"verbose_name\": \"avgVisitDuration\"}, \"expressionType\": \"SIMPLE\", \"hasCustomLabel\": false, \"isNew\": false, \"label\": \"SUM(EXPR$0)\", \"optionName\": \"metric_u5b8vpzqswl_gb9rfys82mj\", \"sqlExpression\": null}, \"slice_id\": 19, \"subheader\": \"minutes\", \"subheader_font_size\": 0.15, \"time_range\": \"Last week\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"big_number_total\", \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 19, \"datasource_name\": \"Average visit duration - last month\", \"schema\": null, \"database_name\": \"clickstream\"}",
+                            "slice_name": "Average visit duration - last 30 days",
+                            "viz_type": "big_number_total"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "druid.clickstream",
+                            "datasource_type": "table",
+                            "id": 20,
+                            "params": "{\"adhoc_filters\": [{\"clause\": \"WHERE\", \"comparator\": \"page_view\", \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_5cijnzpy5v_etj64qk7bjc\", \"isExtra\": false, \"isNew\": false, \"operator\": \"==\", \"sqlExpression\": null, \"subject\": \"eventType\"}], \"all_columns\": [], \"color_pn\": true, \"datasource\": \"1__table\", \"granularity_sqla\": \"__time\", \"groupby\": [\"pagePath\"], \"metrics\": [\"count\"], \"order_by_cols\": [], \"order_desc\": true, \"percent_metrics\": [], \"query_mode\": \"aggregate\", \"row_limit\": 10, \"show_cell_bars\": true, \"slice_id\": 20, \"table_timestamp_format\": \"smart_date\", \"time_grain_sqla\": \"P1D\", \"time_range\": \"DATEADD(DATETIME(\\\"now\\\"), -7, day) : now\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"table\", \"remote_id\": 20, \"datasource_name\": \"clickstream\", \"schema\": \"druid\", \"database_name\": \"clickstream\"}",
+                            "slice_name": "Page views - last 7 days",
+                            "viz_type": "table"
+                        }
+                    }
+                ],
+                "slug": null
+            }
+        }
+    ],
+    "datasources": [
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-03-31T11:40:24"
+                            },
+                            "column_name": "__time",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-03-26T20:11:38"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 1,
+                            "is_active": null,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 1,
+                            "type": "LONG",
+                            "uuid": "f114253f-3a78-4d3a-bd9b-b427bfb67017",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-03-31T11:40:24"
+                            },
+                            "column_name": "brand",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-03-26T20:11:38"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 2,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 1,
+                            "type": "STRING",
+                            "uuid": "484b76b4-4c8c-46ef-8f97-2ea339e37eab",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-03-31T11:40:24"
+                            },
+                            "column_name": "categoryCode",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-03-26T20:11:38"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 3,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 1,
+                            "type": "STRING",
+                            "uuid": "cd484a6d-2c18-4ded-9acf-94528c526769",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-05-07T12:56:26"
+                            },
+                            "column_name": "categoryId",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-03-26T20:11:38"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 4,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 1,
+                            "type": "STRING",
+                            "uuid": "c9c2046e-90d1-427e-a6c7-9e31f38e72c0",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-03-31T11:40:24"
+                            },
+                            "column_name": "eventType",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-03-26T20:11:38"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 5,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 1,
+                            "type": "STRING",
+                            "uuid": "0b581642-9492-4753-af64-e8d923f8d545",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-03-31T11:40:24"
+                            },
+                            "column_name": "price",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-03-26T20:11:38"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 6,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 1,
+                            "type": "FLOAT",
+                            "uuid": "5938b7b1-096a-446e-a02d-bb4e349ef44b",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-05-07T12:56:26"
+                            },
+                            "column_name": "productId",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-03-26T20:11:38"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 7,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 1,
+                            "type": "STRING",
+                            "uuid": "c1e7d378-b101-496f-96a8-bdef6973890a",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-05-07T12:56:26"
+                            },
+                            "column_name": "userId",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-03-26T20:11:38"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 8,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 1,
+                            "type": "STRING",
+                            "uuid": "92a867b7-254b-4704-b715-7076a6445b46",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-03-31T11:40:24"
+                            },
+                            "column_name": "userSession",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-03-26T20:11:38"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 9,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 1,
+                            "type": "STRING",
+                            "uuid": "95a163ad-2d8d-4cca-91f1-613d682d4a65",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-04-13T18:25:59"
+                            },
+                            "column_name": "pagePath",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-04-13T18:25:59"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 20,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 1,
+                            "type": "STRING",
+                            "uuid": "8c2cb739-1c28-486e-bd60-306a41a233b3",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "extra": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": "__time",
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-03-31T11:40:24"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-03-26T20:11:38"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "COUNT(*)",
+                            "extra": null,
+                            "id": 1,
+                            "metric_name": "count",
+                            "metric_type": null,
+                            "table_id": 1,
+                            "uuid": "685bb324-e776-4db0-8511-77aa6c19b20b",
+                            "verbose_name": "COUNT(*)",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-03-31T11:42:17"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-03-31T11:40:24"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "COUNT(*)",
+                            "extra": null,
+                            "id": 5,
+                            "metric_name": "purchase_count",
+                            "metric_type": null,
+                            "table_id": 1,
+                            "uuid": "9efe3423-138c-402c-9bc5-ea11a403a469",
+                            "verbose_name": "",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-04-05T20:08:00"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-04-05T20:05:17"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "COUNT(*) FILTER (WHERE eventType = 'purchase')",
+                            "extra": null,
+                            "id": 6,
+                            "metric_name": "purchaseCount",
+                            "metric_type": null,
+                            "table_id": 1,
+                            "uuid": "fa466738-c0cb-40b4-8c7d-800d659d45a8",
+                            "verbose_name": "",
+                            "warning_text": null
+                        }
+                    },
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-04-05T20:08:00"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-04-05T20:05:17"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "COUNT(*) FILTER (WHERE eventType = 'cart')",
+                            "extra": null,
+                            "id": 7,
+                            "metric_name": "addToCartCount",
+                            "metric_type": null,
+                            "table_id": 1,
+                            "uuid": "78f1b635-0fae-4715-81b8-6010186aa2ab",
+                            "verbose_name": "",
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 1, \"database_name\": \"clickstream\"}",
+                "schema": "druid",
+                "sql": "",
+                "table_name": "clickstream",
+                "template_params": null
+            }
+        },
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-04-05T20:44:42"
+                            },
+                            "column_name": "EXPR$0",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-04-05T20:40:11"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 19,
+                            "is_active": null,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 5,
+                            "type": "INT",
+                            "uuid": "f77ad408-6a73-4481-9db5-c01c5422de9f",
+                            "verbose_name": "avgVisitDuration"
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "extra": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-04-05T20:40:11"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-04-05T20:40:11"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "count(*)",
+                            "extra": null,
+                            "id": 8,
+                            "metric_name": "count",
+                            "metric_type": null,
+                            "table_id": 5,
+                            "uuid": "fcf37426-ecdd-4459-8f94-b6ab62616db7",
+                            "verbose_name": null,
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 5, \"database_name\": \"clickstream\"}",
+                "schema": null,
+                "sql": "SELECT AVG(avgVisitDuration)\r\nFROM (\r\n  \tSELECT userSession, (MAX(TIMESTAMP_TO_MILLIS(__time)) - MIN(TIMESTAMP_TO_MILLIS(__time))) / (1000*60) as avgVisitDuration\r\n  \tFROM clickstream\r\n  \tWHERE __time >= CURRENT_TIMESTAMP - INTERVAL '1' MONTH\r\n  \tGROUP BY userSession\r\n)",
+                "table_name": "Average visit duration - last month",
+                "template_params": null
+            }
+        }
+    ]
+}

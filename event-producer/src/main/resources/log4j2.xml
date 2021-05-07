@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <Property name="logsPath">./target/logs</Property>
+        <Property name="logPatternLayout">%d{yyyy-MM-dd HH:mm} %p %m%n</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${logPatternLayout}" />
+        </Console>
+        
+        <RollingFile name="ApplicationRollingFile" fileName="${logsPath}/application.log" filePattern="${logsPath}/application_%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="${logPatternLayout}" />
+            <Policies>
+<!--                <OnStartupTriggeringPolicy />-->
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="Console" />
+            <!--<appenderRef ref="ApplicationRollingFile" />-->
+        </Root>
+    </Loggers>
+
+</Configuration>

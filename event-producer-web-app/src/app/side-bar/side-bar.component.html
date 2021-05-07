@@ -1,0 +1,11 @@
+<div class="text-center w-100">
+    <h4 class="header-item" (click)="selectCategory(null)">
+        Categories
+    </h4>
+    <div class="mt-4">
+        <div *ngFor="let category of categories" (click)="selectCategory(category)"
+        [ngClass]="isCategorySelected(category) ? 'btn btn-block side-bar-item selected' : 'btn btn-block side-bar-item'">
+            {{ category.name }}
+        </div>
+    </div>
+</div>
